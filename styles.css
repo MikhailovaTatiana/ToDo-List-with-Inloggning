@@ -6,10 +6,6 @@ header {
     display: inline-flex;
 }
 
-#date {
-
-}
-
 #icon, #date {
     color: navy;
 }

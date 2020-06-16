@@ -24,7 +24,7 @@ createForm.addEventListener('submit', (e) => {
         M.Modal.getInstance(modal).close();
         createForm.reset();
     }).catch(err => {
-        console.log(err.meeeage);
+        console.log(err.messenge);
     });
 });
 

@@ -1,3 +1,15 @@
 header {
     text-align: center;
 }
+
+#icon {
+    display: inline-flex;
+}
+
+#date {
+
+}
+
+#icon, #date {
+    color: navy;
+}

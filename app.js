@@ -38,58 +38,48 @@ const setupComments = (data) => {
     data.forEach(doc => {
 
       const comment = doc.data();
-
-      /*
-      const todo = (data, id) => {
-        const li = document.createElement('li');
-        const title = document.createElement('span');
-        const content = document.createElement('span');
-        const cross = document.createElement('div');
-        const edit = document.createElement('button');
-        title.textContent = data.title;
-        content.textContent = data.content;
-        cross.textContent = 'x';
-        li.append(title);
-        li.append(content);
-        li.append(cross);
-
-        cross.addEventListener('click', () => {
-          commentList
-            .doc(id)
-            .delete()
-            .then(() => ul.removeChald(li))
-            .catch(() => console.log("error: " + e));
-        });
-      }
-
-      html += todo;
-      */
-
-
-      const li = `
-          <li class=*item">
-            <div class="collapsible-header grey lighten-4">
-              <span id="icon"><i class="fa fa-circle-o"></i></span>
+   
+      const li = 
+        `
+          <li>
+            <div class="collapsible-header grey lighten-4">  
               ${comment.title}
-              <button>Edit</batton>
-              <button>Delete</batton>
             </div>
             <div class="collapsible-body white">
               ${comment.content}
             </div>
+            <br>
           </li>
-          <br>
         `;
 
-      html += li;
+      const check = 
+        `
+          <div id="icon"><i class="fa fa-circle-o" title="check"></i></div>
+        `;
+
+      const edit = 
+        `
+          <div id="icon"><i class="fa fa-edit" title="edit"></i></div>
+        `;
+
+      const trash =
+        `
+          <div id="icon"><i class="fa fa-trash-o" title="delete"></i></div><br>
+        `;
+
+      html += check + edit + trash + li;      
+
     });
 
     commentList.innerHTML = html;
+    
   } else {
     commentList.innerHTML = '<h5 class="center-align">Login to view ToDo:s</h5>';
   }
-}
 
+  
+
+}
 
 // setup materialize components
 document.addEventListener('DOMContentLoaded', function() {
@@ -99,4 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
     var items = document.querySelectorAll('.collapsible');
     M.Collapsible.init(items);
+
 });
+
